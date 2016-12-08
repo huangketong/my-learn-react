@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="root01"></div>
+    <div id="root02"></div>
+    <div id="root03"></div>
+
+    <script type="text/babel">
+        function formatName(user) { return user.firstName + ' ' + user.lastName; }; 
+        const user = { firstName: 'Harper', lastName: 'Perez' }; 
+        const element = (
+            <h1>
+                Hello, { formatName(user) }!
+            </h1>
+        );
+        
+        function getGreeting(user){
+            if(user){
+            return <h1 className="hhh">Hello , {formatName(user)}</h1>
+            }
+            return <h1 className="hhh">hello , stranger..</h1>
+        }
+
+        const element01 = (getGreeting(user));
+
+        ReactDOM.render( element, document.getElementById('root') );
+
+        ReactDOM.render(
+            element01,
+            document.getElementById('root01')
+        );
+
+
+        const element02 = React.createElement(
+            'h1',
+            { className: 'example02'},
+            'hello, world !!!!'
+        );
+
+        ReactDOM.render(
+            element02,
+            document.getElementById('root02')
+        );
+        
+        
+
+    </script>
+    <!-- const element03 = {
+            type: 'h1',
+            props:{
+                className: 'example03',
+                children: 'hello world 03'
+            }
+        };
+        ReactDOM.render(
+            element03,
+            document.getElementById('root03')
+        ); -->
+</body>
+
+</html>

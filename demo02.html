@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rendering Elements</title>
+
+	<script src="./build/react.js"></script>
+	<script src="./build/react-dom.js"></script>
+	<script src="./build/browser.min.js"></script>
+</head>
+<body>
+	<div id="example01"></div>
+
+	<script type="text/babel">
+		function tick(){
+			const element01 = (
+				<div>
+					<h1>hello  world!</h1>
+					<h2>It is { new Date().toLocaleTimeString() }</h2>
+				</div>
+			);
+			ReactDOM.render(
+				element01,
+				document.getElementById('example01')
+			);
+		};
+		setInterval(tick,1000);
+		
+	</script>
+</body>
+</html>
