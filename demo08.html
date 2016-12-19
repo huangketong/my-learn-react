@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lists and Keys</title>
+	<script type="text/javascript" src="./build/react.js"></script>
+	<script type="text/javascript" src="./build/react-dom.js"></script>
+	<script type="text/javascript" src="./build/browser.min.js"></script>
+</head>
+<body>
+	<div id="root"></div>
+	<div id="root1"></div>
+	<script type="text/babel">
+		const number = [1,2,3,4,5];
+		const listItems = number.map((number) => <li>this is {number}</li>);
+
+		ReactDOM.render(
+			<ul>{listItems}</ul>,
+			document.getElementById('root')
+		);
+
+		function Numberlist(props){
+			const number = props.number;
+			const listItem = number.map((number) => <li>{number}</li>);
+
+			return(<ul>{listItem}</ul>);
+		}
+		ReactDOM.render(
+			<Numberlist number={number}/>,
+			document.getElementById('root1')
+		)
+	</script>
+</body>
+</html>
