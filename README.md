@@ -15,3 +15,8 @@
             在根目录下面创建一个`.babelrc `文件，内容是一段json数据,如下: { "presets": ["es2015", "react"] }
 ###配置`webpack.config.js`
         新建一个名为webpack.config.js的配置文件，如代码中的文件
+###配置启动命令
+        在package.json文件中添加"scripts":<br> 
+        {<br>
+        "build": "webpack",<br>
+        "dev": "webpack-dev-server --hot"}
