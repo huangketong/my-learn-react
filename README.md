@@ -21,6 +21,6 @@
         "build": "webpack",<br>
         "dev": "webpack-dev-server --hot"}<br>
 ##### 安装react和react-dom依赖
-    npm install react react-dom --save\
+    npm install react react-dom --save
 ##### 启动服务
   只需在shell窗口中输入 ` npm run dev `
