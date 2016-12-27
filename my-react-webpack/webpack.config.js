@@ -24,6 +24,8 @@ module.exports = {
         inline: true,
         progress: true
     },
+    // eslint: { configFile: './.eslintrc' },
+
     resolve: {
         extensions: ['', '.js', '.jsx'],
         root: APP_PATH
@@ -31,11 +33,11 @@ module.exports = {
 
     module: {
         // 配置 preLoaders, 将 eslint 添加进入
-        preLoaders: [{
-            test: /\.jsx?$/,
-            loaders: ['eslint'],
-            include: APP_PATH
-        }],
+        // preLoaders: [{
+        //     test: /\.jsx?$/,
+        //     loaders: ['eslint-loader'],
+        //     include: APP_PATH
+        // }],
 
         // 配置 loaders, 将 Babel 添加进入
         loaders: [{

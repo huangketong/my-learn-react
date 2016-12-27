@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Forms--Controlled Components </title>
+	<script type="text/javascript" src="./build/react.js"></script>
+	<script type="text/javascript" src="./build/react-dom.js"></script>
+	<script type="text/javascript" src="./build/browser.min.js"></script>
+</head>
+<body>
+	<h2>提交表单</h2>
+	<div id="root1"></div>
+	<h2>文本域输入</h2>
+	<div id="root2"></div>
+	<h2>多选框</h2>
+	<div id="root3"></div>
+
+	<script type="text/babel">
+		class NameForm extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {value: ''};
+
+				this.handleChange = this.handleChange.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
+			}
+			handleChange(e) {
+				this.setState({value: e.target.value});
+			}
+			handleSubmit(e) {
+				alert('A name was submitted: ' + this.state.value);
+				e.preventDefault();
+			}
+
+			render(){
+				return (
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							Name:<input type="text" value={this.state.value} onChange={this.handleChange} />
+						</label>
+							&nbsp;<input type="submit" value="Submit" />
+					</form>
+				);
+			}
+		}
+
+		ReactDOM.render(
+			<NameForm />,
+			document.getElementById('root1')
+		);
+
+
+		class TextArea extends React.Component {
+			constructor(props) {
+				super(props);
+				this.state = {value: ''};
+
+				this.handleChange = this.handleChange.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
+			}
+			handleChange(e) {
+				this.setState({value: e.target.value});
+			}
+			handleSubmit(e) {
+				alert('A name was submitted: ' + this.state.value);
+				e.preventDefault();
+			}
+
+			render(){
+				return (
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							<textarea  type="text" value={this.state.value} onChange={this.handleChange} placeholder="请输入内容"></textarea>
+						</label>
+							&nbsp;<input type="submit" value="Submit" />
+					</form>
+				);
+			}
+		}
+		ReactDOM.render(
+			<TextArea />,
+			document.getElementById('root2')
+		);
+
+		class Selects extends React.Component{
+			constructor(props){
+				super(props);
+				this.state = {value: ''};
+
+				this.handleChange = this.handleChange.bind(this);
+				this.handleSubmit = this.handleSubmit.bind(this);
+			}
+			handleChange(e) {
+				this.setState({value: e.target.value});
+			}
+			handleSubmit(e) {
+				alert('What you choose is ' + this.state.value);
+				e.preventDefault();
+			}
+			render(){
+				return(
+					<form onSubmit={this.handleSubmit}>
+						<label>
+							choose your things:<select value={this.state.value} onChange={this.handleChange}>
+								<option value="null">please choose</option>
+								<option value="orange">Orange</option>
+								<option value="apple">Apple</option>
+								<option value="pear">Pear</option>
+							</select>
+						</label>
+						<input type="submit" value="Submit" />
+					</form>
+				);
+			}
+		}
+		ReactDOM.render(
+			<Selects />,
+			document.getElementById('root3')
+		);
+	</script>
+
+</body>
+</html>
