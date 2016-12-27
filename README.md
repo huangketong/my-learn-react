@@ -11,8 +11,7 @@
             npm install babel-loader --save-dev<br>
             npm install babel-preset-es2015<br>
             npm install babel-react<br>
-    2.配置.babelrc 文件
-            在根目录下面创建一个`.babelrc `文件，内容是一段json数据,如下：
-            ·{
-                "presets": ["es2015", "react"]
-            }·
+    2.配置.babelrc 文件<br>
+            在根目录下面创建一个`.babelrc `文件，内容是一段json数据,如下：<br>
+            { "presets": ["es2015", "react"] } <br>
+                    }
