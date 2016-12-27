@@ -16,7 +16,7 @@
 ###配置`webpack.config.js`
         新建一个名为webpack.config.js的配置文件，如代码中的文件
 ###配置启动命令
-        在package.json文件中添加"scripts":<br> 
-        {<br>
+        在package.json文件中添加:<br>
+        "scripts":{<br>
         "build": "webpack",<br>
         "dev": "webpack-dev-server --hot"}
